@@ -4,9 +4,6 @@ public class BlockController : MonoBehaviour
 {
     [SerializeField] private GenerateBlock generateBlock;
 
-    private int totalBlocks;
-    private int destroyedBlocks;
-
     void Start()
     {
         BlockGenerate();
@@ -17,8 +14,6 @@ public class BlockController : MonoBehaviour
         if (generateBlock != null)
         {
             generateBlock.GenerateBlocks();
-            totalBlocks = generateBlock.Width * generateBlock.Height;
-            destroyedBlocks = 0;
         }
         else
         {
@@ -26,4 +21,14 @@ public class BlockController : MonoBehaviour
         }
     }
 
+    public void OnHit()
+    {
+        Debug.Log("Block Hit!");
+    }
+
+    public void DestroyBlock()
+    {
+        GameManager.Instance.CountBlock();
+        Destroy(gameObject);
+    }
 }
