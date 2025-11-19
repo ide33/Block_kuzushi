@@ -5,44 +5,29 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    // private int totalBlock;
-    // private int destroyedBlockCount;
-
     private void Awake()
     {
         Instance = this;
     }
 
-    // public void SetTotalBlock(int count)
-    // {
-    //     totalBlock = count;
-    //     // destroyedBlockCount = 0;
-    // }
-
-    // public void CountBlock()
-    // {
-    //     destroyedBlockCount++;
-
-    //     Debug.Log($"破壊数: {destroyedBlockCount} / {totalBlock}");
-
-    //     if (AllBlockDestroyed())
-    //     {
-    //         GameClear();
-    //     }
-    // }
-
-    // public bool AllBlockDestroyed()
-    // {
-    //     return destroyedBlockCount >= totalBlock;
-    // }
-
     public void GameClear()
     {
         Debug.Log("ゲームクリア！");
+        DestroyBall();
     }
 
     public void GameOver()
     {
         Debug.Log("ゲームオーバー！");
+        DestroyBall();
+    }
+
+    public void DestroyBall()
+    {
+        GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+        if (ball != null)
+        {
+            Destroy(ball);
+        }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7737160754022354475}
   - component: {fileID: 5302246745377266984}
   - component: {fileID: 2103353587843506346}
-  - component: {fileID: 6333970814407676278}
+  - component: {fileID: -157250771567365094}
   m_Layer: 0
   m_Name: BottomWall
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6333970814407676278
+--- !u!114 &-157250771567365094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2445520265932350010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad28db518194234d97f4916a972e2c0, type: 3}
+  m_Script: {fileID: 11500000, guid: c277dd82189150c4dab69d18fa5a3305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
