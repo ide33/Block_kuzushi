@@ -43,6 +43,6 @@ public class GenerateBlock : MonoBehaviour
             }
         }
 
-        GameManager.Instance.SetTotalBlock(createCount);
+        BlockController.Instance.SetTotalBlock(createCount);
     }
 }

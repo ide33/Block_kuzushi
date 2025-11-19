@@ -2,33 +2,51 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
+    public static BlockController Instance;
+
     [SerializeField] private GenerateBlock generateBlock;
+
+    private int totalBlock;
+    private int destroyedBlockCount;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
-        BlockGenerate();
+        generateBlock.GenerateBlocks();
+
+        totalBlock = generateBlock.transform.childCount;
     }
 
-    public void BlockGenerate()
+    public void SetTotalBlock(int count)
     {
-        if (generateBlock != null)
-        {
-            generateBlock.GenerateBlocks();
-        }
-        else
-        {
-            Debug.LogError("GenerateBlock コンポーネントが設定されていません！");
-        }
+        totalBlock = count;
     }
 
-    public void OnHit()
+    public void OnHit(GameObject block)
     {
         Debug.Log("Block Hit!");
+        DestroyBlock(block);
     }
 
-    public void DestroyBlock()
+    public void DestroyBlock(GameObject block)
     {
-        GameManager.Instance.CountBlock();
-        Destroy(gameObject);
+        Destroy(block);
+        CountBlock();
+    }
+
+    public void CountBlock()
+    {
+        destroyedBlockCount++;
+
+        Debug.Log($"破壊数: {destroyedBlockCount} / {totalBlock}");
+
+        if (destroyedBlockCount >= totalBlock)
+        {
+            GameManager.Instance.GameClear();
+        }
     }
 }

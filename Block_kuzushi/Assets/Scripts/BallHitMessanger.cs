@@ -15,10 +15,10 @@ public class BallHitMessanger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        BlockController block = collision.gameObject.GetComponent<BlockController>();
-        if (block != null)
-        {
-            block.OnHit();
-        }
+        // 当たったオブジェクトへ「OnBallHit」を通知
+        collision.gameObject.SendMessage(
+            "OnBallHit",
+            SendMessageOptions.DontRequireReceiver
+        );
     }
 }
