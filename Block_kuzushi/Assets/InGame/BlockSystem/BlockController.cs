@@ -42,6 +42,8 @@ public class BlockController : MonoBehaviour
     {
         destroyedBlockCount++;
 
+        GameManager.Instance.AddScore(10);
+
         Debug.Log($"破壊数: {destroyedBlockCount} / {totalBlock}");
 
         if (destroyedBlockCount >= totalBlock)
