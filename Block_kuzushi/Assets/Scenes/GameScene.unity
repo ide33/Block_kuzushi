@@ -498,6 +498,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 584851476791562511, guid: 9b17f1663c4d0d74a95715aff3c3f9a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3094542825393849403, guid: 9b17f1663c4d0d74a95715aff3c3f9a9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -540,6 +544,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799291321725705708, guid: 9b17f1663c4d0d74a95715aff3c3f9a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551972172628659813, guid: 9b17f1663c4d0d74a95715aff3c3f9a9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

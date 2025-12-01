@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class InputKeyPlayer : MonoBehaviour, IPlayerMove
 {
     [SerializeField] private float moveSpeed = 5f;
 
-    private void Update()
+    void Update()
+    {
+        PlayerMove();
+    }
+
+    public void PlayerMove()
     {
         float input = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * input * moveSpeed * Time.deltaTime);
